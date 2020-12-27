@@ -74,6 +74,7 @@ docs/_build/
 # PyBuilder
 target/
 
+static/videos/
 static/images/
 
 # Jupyter Notebook

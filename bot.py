@@ -8,10 +8,18 @@ def bot_random_image():
     path = generate_path(mypath)
     bot.api.update_with_media(path, status="")
 
+def bot_random_video():
+    mypath = "static/videos"
+    path=generate_path(mypath)
+    upload_result = bot.api.media_upload(path)
+    bot.api.update_status( media_ids=[upload_result.media_id_string],status="")
+
 def generate_path(mypath):
     onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     nombre = onlyfiles[randrange(len(onlyfiles[1]))]
     return mypath + "/" + nombre  
+
+
 
 
 class Bot:
