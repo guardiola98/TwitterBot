@@ -1,4 +1,5 @@
 import tweepy
+import sys
 from random import randrange
 from os import listdir
 from os.path import isfile, join
@@ -16,7 +17,10 @@ def bot_random_video():
 
 def generate_path(mypath):
     onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-    nombre = onlyfiles[randrange(len(onlyfiles[1]))]
+    r = randrange(len(onlyfiles))
+    print(len(onlyfiles))
+    print(r)
+    nombre = onlyfiles[r]
     return mypath + "/" + nombre  
 
 
